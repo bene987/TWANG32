@@ -15,7 +15,7 @@
 #define ESP32_F_CPU         80000000  // the speed of the processor
 #define AUDIO_INTERRUPT_PRESCALER   80 
 #define SOUND_TIMER_NO 0
-//#define AUDIO_PIN 25
+// #define AUDIO_PIN 17
 #define MIN_FREQ 20
 #define MAX_FREQ 16000
 
@@ -46,7 +46,7 @@ void IRAM_ATTR onSoundTimer()
 
 void sound_init(int pin){  // pin must be a DAC pin number !! (typically 25 or 26)
   dac_pin = pin;
-	sound_on = false;
+	sound_on = true;
 	pinMode(dac_pin, OUTPUT);
 	sound_volume = 0;
 	

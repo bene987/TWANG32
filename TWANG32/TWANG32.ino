@@ -55,8 +55,9 @@
 #endif
 
 
-
-#define DIRECTION            1
+#define SDA_PIN              3
+#define SCL_PIN              5
+#define DIRECTION            0
 #define USE_GRAVITY          0     // 0/1 use gravity (LED strip going up wall)
 #define BEND_POINT           550   // 0/1000 point at which the LED strip goes up the wall
 
@@ -202,7 +203,7 @@ void setup() {
 	
 	settings_init();	// load the user settings from EEPROM
 	
-	Wire.begin();
+	Wire.begin(SDA_PIN, SCL_PIN, 0);
 	accelgyro.initialize();
 	
 #ifdef USE_NEOPIXEL
